@@ -1,5 +1,6 @@
 package com.user.usermanagement.domain.model;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 import java.util.Date;
@@ -9,18 +10,21 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-@Data
 public class UserModel {
 
     private int id;
-    @NonNull
+    @NotBlank(message = "First Name should not be empty")
     private String firstName;
-    @NonNull
+
+    @NotBlank(message = "Last Name should not be empty")
     private String lastName;
-    @NonNull
+
+    @NotBlank(message = "Mobile Number should not be empty")
     private String mobileNo;
-    @NonNull
-    private Date dateOfBirth;
-    @NonNull
-    private Address address;
+
+    @NotBlank(message = "Date of birth should not be empty")
+    private String dateOfBirth;
+
+    @NotBlank(message = "Zipcode should not be empty")
+    private String zipcode;
 }

@@ -1,6 +1,5 @@
 package com.user.usermanagement.domain.entity;
 
-import com.user.usermanagement.domain.model.Address;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -28,8 +27,9 @@ public class UserEntity {
     private String mobileNo;
 
     @Column(name = "dateOfBirth")
-    private Date dateOfBirth;
+    private String dateOfBirth;
 
     @Column(name = "address")
+    @Embedded
     private Address address;
 }
