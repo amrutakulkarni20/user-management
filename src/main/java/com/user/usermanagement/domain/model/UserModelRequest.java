@@ -1,16 +1,15 @@
 package com.user.usermanagement.domain.model;
 
-import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
-import java.util.Date;
+import javax.validation.constraints.NotBlank;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class UserModel {
+public class UserModelRequest {
 
     private int id;
     @NotBlank(message = "First Name should not be empty")

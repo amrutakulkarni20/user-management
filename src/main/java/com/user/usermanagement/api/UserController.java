@@ -1,6 +1,8 @@
 package com.user.usermanagement.api;
 
-import com.user.usermanagement.domain.model.UserModel;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.user.usermanagement.domain.model.UserModelRequest;
+import com.user.usermanagement.domain.model.UserModelResponse;
 import com.user.usermanagement.domain.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -17,7 +19,7 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("/create")
-    public void createUser(@Validated @RequestBody UserModel userModel){
-        userService.createUSer(userModel);
+    public UserModelResponse createUser(@Validated @RequestBody UserModelRequest userModelRequest) throws JsonProcessingException {
+        return userService.createUSer(userModelRequest);
     }
 }

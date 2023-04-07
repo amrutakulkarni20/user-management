@@ -1,6 +1,6 @@
 package com.user.usermanagement.domain.model;
 
-import jakarta.validation.constraints.NotBlank;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
 @Getter
@@ -10,15 +10,15 @@ import lombok.*;
 @ToString
 public class Address {
 
-    @NotBlank(message = "Street should not be empty")
-    private String street;
+    @JsonProperty("Pincode")
+    private String pinCode;
 
-    @NotBlank(message = "City should not be empty")
+    @JsonProperty("City")
     private String city;
 
-    @NotBlank(message = "Country should not be empty")
-    private String country;
+    @JsonProperty("District")
+    private String district;
 
-    @NotBlank(message = "Postcode should not be empty")
-    private String postalCode;
+    @JsonProperty("State")
+    private String state;
 }

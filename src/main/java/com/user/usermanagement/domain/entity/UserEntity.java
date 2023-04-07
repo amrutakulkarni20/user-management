@@ -1,9 +1,8 @@
 package com.user.usermanagement.domain.entity;
 
-import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Date;
+import javax.persistence.*;
 
 @Entity
 @Getter
@@ -31,5 +30,5 @@ public class UserEntity {
 
     @Column(name = "address")
     @Embedded
-    private Address address;
+    private AddressEntity address;
 }
